@@ -1,0 +1,193 @@
+%-------------------------
+% Resume in LaTeX
+% Based on: github.com/sb2nov/resume
+% License: MIT
+%------------------------
+
+\documentclass[letterpaper,10.5pt]{article}
+
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item\small{
+    \textbf{#1}{: #2 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubheadingSimple}[2]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeItemPlain}[1]{
+  \item\small{#1 \vspace{-2pt}}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+  {\Large\textbf{Kelley Lynch}} \\[4pt]
+  \small
+  \href{mailto:kelleylynch@gmail.com}{kelleylynch@gmail.com} $|$
+  (857) 999-5661 $|$
+  \href{https://github.com/kelleyl}{github.com/kelleyl} $|$
+  \href{https://kelleylynch.com}{kelleylynch.com}
+\end{center}
+
+%-----------SUMMARY----------
+\section{Summary}
+  \small{Computer Science PhD Candidate specializing in Computational Linguistics, Multimedia AI, and Vision-Language Models (VLMs). Expertise in agentic systems, prompt optimization, multimodal data annotation, and ontology development for information extraction in archival and industry contexts.}
+
+%-----------SKILLS----------
+\section{Skills}
+  \begin{itemize}[leftmargin=*, label={}, itemsep=-2pt, parsep=2pt]
+    \small{
+      \item \textbf{AI/ML:} Vision-Language Models, Large Language Models, Agent Design \& Orchestration, Prompt Optimization (DSPy), Evaluation Frameworks, Data Annotation, NLP, Computer Vision
+      \item \textbf{Tools:} Python, Go, PyTorch, OpenCV, Flask, Elasticsearch, Docker
+      \item \textbf{Domains:} Multimedia Information Extraction, Ontology Development, Conversational AI, Synthetic Data Generation, MMIF
+    }
+  \end{itemize}
+
+%-----------EXPERIENCE----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Ph.D. Candidate, Computer Science}{Aug 2017 -- Present}
+      {Brandeis University}{Waltham, MA}
+      \resumeItemListStart
+        \resumeItem{CLAMS Agent (Thesis)}{Designing an LLM/VLM-powered agentic system to orchestrate multimedia metadata extraction}
+        \resumeItem{SDK \& Tools}{Integrating LLM interfaces into the CLAMS SDK; building apps like smolvlm2 for multimodal analysis}
+        \resumeItem{Slates-500 Dataset}{Created a multimodal dataset and evaluation pipeline for information extraction from archival video slates}
+        \resumeItem{Hawaii Chyron Dataset}{Curated a dataset for extracting Hawaiian language text from broadcast video using OCR and VLMs}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Research Scientist}{Sep 2022 -- Jan 2024}
+      {Posh Inc.}{Boston, MA}
+      \resumeItemListStart
+        \resumeItemPlain{Led ontology development for enterprise conversational AI to improve intent recognition and dialogue flow}
+        \resumeItemPlain{Analyzed customer interactions to identify edge cases, expand conversational models, and improve accuracy}
+        \resumeItemPlain{Evaluated and optimized production AI models for scalable chatbot deployments}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {ML Research Intern}{May 2022 -- Aug 2022}
+      {Cobalt}{Boston, MA}
+      \resumeItemListStart
+        \resumeItemPlain{Evaluated GPT-3 for generating synthetic conversational data to train downstream models}
+        \resumeItemPlain{Developed automated, NLP-driven summarization methods for customer support calls}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {NLP Research Consultant}{May 2019 -- May 2021}
+      {Booxby Inc.}{Sausalito, CA (Remote)}
+      \resumeItemListStart
+        \resumeItemPlain{Designed and tested end-to-end NLP pipelines for feature extraction and narrative analysis on large fiction collections}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------PUBLICATIONS----------
+\section{Selected Publications \& Presentations}
+
+  \resumeSubHeadingListStart
+
+    \resumeSubheadingSimple{CLAMS Platform}{\small Core developer and coauthor}
+    \resumeItemListStart
+      \resumeItemPlain{Rim, King, \textbf{Lynch}, Verhagen, Pustejovsky. \textit{A Platform for AI-Assisted Archival Metadata Generation.} HCI International, 2025.}
+      \resumeItemPlain{\textbf{Lynch}, Rim, King, Pustejovsky. \textit{Multimodal Interoperability with the CLAMS Platform.} MMM 2025 (Demo).}
+      \resumeItemPlain{Verhagen, \textbf{Lynch}, Rim, Pustejovsky. \textit{The CLAMS Platform at Work.} LREC 2022.}
+      \resumeItemPlain{Rim, \textbf{Lynch}, Verhagen, Ide, Pustejovsky. \textit{Interchange Formats for Visualization: LIF and MMIF.} LREC 2020.}
+      \resumeItemPlain{Rim, \textbf{Lynch}, Pustejovsky. \textit{Computational Linguistics Applications for Multimedia Services.} LaTeCH-CLfL 2019.}
+      \resumeItemPlain{Workshop: \textit{Indexing the American Archive of Public Broadcasting.} Fantastic Futures 2019, Stanford.}
+      \resumeItemPlain{Cariani, Pustejovsky, \textbf{Lynch}, Davis-Kaufman. \textit{Automated Creation of Descriptive Metadata for Large Media Archives.} JTS 2019, Amsterdam.}
+    \resumeItemListEnd
+
+    \resumeSubheadingSimple{Slates-500 Dataset}{}
+    \resumeItemListStart
+      \resumeItemPlain{Multimodal dataset and evaluation pipeline for information extraction from archival video slates. Under review.}
+    \resumeItemListEnd
+
+    \resumeSubheadingSimple{Hawaii Chyron Dataset}{}
+    \resumeItemListStart
+      \resumeItemPlain{Understanding On-Screen Text: Do AI Tools Struggle with Hawaiian Chyrons? IASA Journal (in review).}
+      \resumeItemPlain{Presentations: IASA Conference, Honolulu (2025); Fantastic Futures Conference (2025).}
+    \resumeItemListEnd
+
+    \resumeSubheadingSimple{Video Content Summarization}{}
+    \resumeItemListStart
+      \resumeItemPlain{\textbf{Lynch}, Jiang, Lambright, Rim, Pustejovsky. \textit{Video Content Summarization with Large Language-Vision Models.} IEEE Big Data (CAS Workshop), 2024.}
+      \resumeItemPlain{Presentation: Boston Digital Humanities Symposium, 2025.}
+    \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------EDUCATION----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheadingSimple{Ph.D., Computer Science -- Brandeis University}{Expected 2026}
+    \resumeSubheadingSimple{M.A., Computational Linguistics -- Brandeis University}{2017}
+    \resumeSubheadingSimple{B.S., Mathematics and French -- Centre College}{2013}
+  \resumeSubHeadingListEnd
+
+\end{document}

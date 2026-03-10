@@ -1,0 +1,141 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const buildDate = new Date().toISOString().slice(0, 10);
+const cvFilename = `Lynch_Kelley_CV_${buildDate}.pdf`;
+---
+
+<BaseLayout title="Kelley Lynch — Computational Linguistics & Multimedia AI">
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-photo">
+        <img src="/kelley-photo.png" alt="Kelley Lynch" class="photo" />
+      </div>
+      <div class="hero-text">
+        <p class="section-label">PhD Candidate in Computer Science</p>
+        <h1>Kelley Lynch</h1>
+        <p class="hero-subtitle">Brandeis University &middot; Computational Linguistics</p>
+        <p class="hero-blurb">
+          I'm a Computer Science PhD candidate at Brandeis University specializing in
+          Computational Linguistics, Multimedia AI, and Vision-Language Models (VLMs).
+          My research focuses on designing agentic systems, prompt optimization, multimodal
+          data annotation, and developing complex ontologies for information extraction. I work on the
+          <a href="https://clams.ai" target="_blank">CLAMS</a> project, developing tools
+          that help cultural heritage archives analyze and extract metadata from audiovisual materials.
+        </p>
+        <div class="hero-actions">
+          <a href="https://github.com/kelleyl" target="_blank" class="btn btn-primary">GitHub</a>
+          <a href="/publications" class="btn btn-outline">Publications</a>
+          <a href="/Lynch_Kelley_Resume.pdf" class="btn btn-outline" download={cvFilename}>Download CV</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research Interests -->
+  <section>
+    <div class="container">
+      <h2>Research Interests</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Vision-Language Models</h3>
+          <p>Applying VLMs to multimedia analysis tasks including OCR, image captioning, and video understanding for cultural heritage archives.</p>
+        </div>
+        <div class="card">
+          <h3>Multimedia AI & Metadata</h3>
+          <p>Automated metadata generation for audiovisual collections using NLP, computer vision, and ASR pipelines through the CLAMS platform.</p>
+        </div>
+        <div class="card">
+          <h3>Agentic Systems</h3>
+          <p>Designing LLM-based agent architectures for orchestrating complex multimedia processing workflows.</p>
+        </div>
+        <div class="card">
+          <h3>Benchmark Dataset Creation</h3>
+          <p>Designing multimodal datasets and evaluation pipelines for measuring model performance on information extraction tasks.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section>
+    <div class="container">
+      <h2>Contact</h2>
+      <div class="contact-links">
+        <a href="mailto:kelleylynch@gmail.com" class="btn btn-outline">kelleylynch@gmail.com</a>
+        <a href="https://github.com/kelleyl" target="_blank" class="btn btn-outline">GitHub</a>
+        <a href="/Lynch_Kelley_Resume.pdf" class="btn btn-primary" download={cvFilename}>Download CV</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    padding: var(--space-2xl) 0;
+  }
+
+  .hero-inner {
+    display: flex;
+    gap: var(--space-xl);
+    align-items: flex-start;
+  }
+
+  .hero-photo {
+    flex-shrink: 0;
+  }
+
+  .photo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 3px solid var(--color-border);
+    object-fit: cover;
+  }
+
+  .hero-subtitle {
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: var(--color-text-muted);
+    font-size: 1.05rem;
+    margin-top: var(--space-xs);
+  }
+
+  .hero-blurb {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    margin: var(--space-md) 0 var(--space-lg);
+    max-width: 600px;
+    line-height: 1.75;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+  }
+
+  .contact-links {
+    display: flex;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+  }
+
+  .card p {
+    color: var(--color-text-muted);
+    font-size: 0.92rem;
+    margin-top: var(--space-sm);
+    line-height: 1.65;
+  }
+
+  @media (max-width: 768px) {
+    .hero-inner {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .hero-blurb { margin-left: auto; margin-right: auto; }
+    .hero-actions { justify-content: center; }
+    .contact-links { justify-content: center; }
+  }
+</style>
