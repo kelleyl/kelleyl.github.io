@@ -2,7 +2,9 @@
 const currentPath = Astro.url.pathname;
 const navLinks = [
   { href: '/', label: 'Home' },
+  { href: '/projects', label: 'Projects' },
   { href: '/publications', label: 'Publications' },
+  { href: '/blog', label: 'Blog' },
 ];
 ---
 
@@ -14,7 +16,7 @@ const navLinks = [
     </button>
     <nav id="main-nav">
       {navLinks.map(link => (
-        <a href={link.href} class:list={['nav-link', { active: currentPath === link.href }]}>
+        <a href={link.href} class:list={['nav-link', { active: link.href === '/' ? currentPath === '/' : currentPath.startsWith(link.href) }]}>
           {link.label}
         </a>
       ))}

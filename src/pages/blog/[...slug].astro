@@ -1,0 +1,103 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  return posts.map(post => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<BaseLayout title={`${post.data.title} — Kelley Lynch`} description={post.data.description}>
+  <article>
+    <div class="container">
+      <p class="section-label"><a href="/blog">&larr; Blog</a></p>
+      <h1>{post.data.title}</h1>
+      <time datetime={post.data.date.toISOString().slice(0, 10)}>
+        {post.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+      </time>
+      {post.data.tags && (
+        <div class="tag-list">
+          {post.data.tags.map((tag: string) => <span class="tag">{tag}</span>)}
+        </div>
+      )}
+      <div class="prose">
+        <Content />
+      </div>
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  h1 {
+    margin-bottom: var(--space-xs);
+  }
+
+  time {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+  }
+
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+    margin-top: var(--space-sm);
+  }
+
+  .prose {
+    margin-top: var(--space-xl);
+    font-size: 0.95rem;
+    line-height: 1.8;
+  }
+
+  .prose :global(h2) {
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-sm);
+  }
+
+  .prose :global(p) {
+    margin-bottom: var(--space-md);
+  }
+
+  .prose :global(pre) {
+    background: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    padding: var(--space-md);
+    overflow-x: auto;
+    font-size: 0.85rem;
+    margin-bottom: var(--space-md);
+  }
+
+  .prose :global(code) {
+    font-size: 0.88em;
+    background: var(--color-bg-alt);
+    padding: 0.15rem 0.35rem;
+    border-radius: 3px;
+  }
+
+  .prose :global(pre code) {
+    background: none;
+    padding: 0;
+  }
+
+  .prose :global(a) {
+    color: var(--color-accent);
+  }
+
+  .prose :global(ul), .prose :global(ol) {
+    padding-left: 1.4rem;
+    margin-bottom: var(--space-md);
+  }
+
+  .prose :global(li) {
+    margin-bottom: var(--space-xs);
+  }
+</style>

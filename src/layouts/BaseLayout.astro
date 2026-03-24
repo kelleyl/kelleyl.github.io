@@ -6,9 +6,17 @@ import Footer from '../components/Footer.astro';
 interface Props {
   title: string;
   description?: string;
+  ogImage?: string;
+  ogType?: string;
 }
 
-const { title, description = "Kelley Lynch — PhD Student in Computer Science at Brandeis University" } = Astro.props;
+const {
+  title,
+  description = "Kelley Lynch — PhD Candidate in Computer Science at Brandeis University",
+  ogImage = '/kelley-photo.png',
+  ogType = 'website',
+} = Astro.props;
+const canonicalUrl = Astro.url.href;
 ---
 
 <!DOCTYPE html>
@@ -19,6 +27,15 @@ const { title, description = "Kelley Lynch — PhD Student in Computer Science a
   <meta name="description" content={description} />
   <title>{title}</title>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="canonical" href={canonicalUrl} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:type" content={ogType} />
+  <meta property="og:url" content={canonicalUrl} />
+  <meta property="og:image" content={ogImage} />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
 </head>
 <body>
   <Header />

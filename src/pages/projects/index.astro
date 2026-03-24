@@ -1,0 +1,115 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const projects = [
+  {
+    title: 'CLAMS Platform',
+    slug: 'clams',
+    tagline: 'AI-assisted metadata generation for audiovisual archives',
+    tags: ['NLP', 'Computer Vision', 'Multimodal AI', 'Agent Systems'],
+  },
+  {
+    title: 'Slates-500 Dataset',
+    slug: 'slates-500',
+    tagline: 'A multimodal benchmark for information extraction from archival video slates',
+    tags: ['VLMs', 'Dataset', 'Evaluation', 'Information Extraction'],
+  },
+  {
+    title: 'Hawaii Chyron Dataset',
+    slug: 'hawaii-chyrons',
+    tagline: 'Evaluating AI tools on Hawaiian language text extraction from broadcast video',
+    tags: ['OCR', 'VLMs', 'Low-Resource Languages', 'Dataset'],
+  },
+  {
+    title: 'Video Content Summarization',
+    slug: 'video-summarization',
+    tagline: 'Summarizing archival video content with large language-vision models',
+    tags: ['LVMs', 'Summarization', 'Video Understanding'],
+  },
+];
+---
+
+<BaseLayout title="Projects — Kelley Lynch">
+  <section>
+    <div class="container">
+      <h1>Projects</h1>
+      <p class="page-intro">
+        My research develops AI tools for multimedia analysis, with a focus on cultural heritage
+        archives and multimodal information extraction.
+      </p>
+
+      <div class="project-grid">
+        {projects.map(project => (
+          <a href={`/projects/${project.slug}`} class="project-card">
+            <h2>{project.title}</h2>
+            <p>{project.tagline}</p>
+            <div class="tag-list">
+              {project.tags.map(tag => (
+                <span class="tag">{tag}</span>
+              ))}
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  h1 {
+    margin-bottom: var(--space-sm);
+  }
+
+  .page-intro {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    max-width: 640px;
+    margin-bottom: var(--space-xl);
+  }
+
+  .project-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg);
+  }
+
+  .project-card {
+    display: block;
+    padding: var(--space-lg);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .project-card:hover {
+    border-color: var(--color-accent);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  }
+
+  .project-card h2 {
+    font-size: 1.15rem;
+    margin-bottom: var(--space-xs);
+  }
+
+  .project-card p {
+    font-size: 0.92rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin-bottom: var(--space-md);
+  }
+
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+  }
+
+  @media (max-width: 768px) {
+    .project-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

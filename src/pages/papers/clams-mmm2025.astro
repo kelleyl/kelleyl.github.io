@@ -1,0 +1,118 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Multimodal Interoperability with the CLAMS Platform — Kelley Lynch" description="Demo paper presenting the CLAMS platform for developing and deploying interoperable multimedia analysis tools. Published at MMM 2025.">
+  <section>
+    <div class="container">
+      <p class="section-label"><a href="/publications">&larr; Publications</a></p>
+      <h1>Multimodal Interoperability with the CLAMS Platform</h1>
+
+      <div class="paper-meta">
+        <p class="authors"><strong>Kelley Lynch</strong>, Kyeongmin Rim, Owen King, James Pustejovsky</p>
+        <p class="venue">MultiMedia Modeling: 31st International Conference (MMM 2025), Nara, Japan</p>
+        <p class="venue-detail">Demo Track &middot; Springer &middot; Pages 173&ndash;179</p>
+      </div>
+
+      <div class="paper-links">
+        <a href="https://scholarworks.brandeis.edu/esploro/outputs/bookChapter/Multimodal-Interoperability-withtheCLAMS-Platform/9924429173501921" target="_blank" class="btn btn-primary">Brandeis ScholarWorks</a>
+        <a href="https://doi.org/10.1007/978-981-96-2074-6_19" target="_blank" class="btn btn-outline">Publisher (Springer)</a>
+        <a href="/projects/clams" class="btn btn-outline">CLAMS Project</a>
+      </div>
+
+      <div class="paper-body">
+        <h2>Abstract</h2>
+        <p>
+          This paper presents the CLAMS (Computational Linguistics Applications for Multimedia
+          Services) platform, which provides a framework for developing and deploying interoperable
+          multimedia analysis tools. CLAMS facilitates the processing of audiovisual content such as
+          broadcast news videos by enabling seamless integration of tools across different media types
+          including text, audio, video, and images. At the core of CLAMS is the Multi-Media
+          Interchange Format (MMIF), a JSON-based annotation format designed to support the exchange
+          of data between different tools in a consistent and structured manner. This ensures that
+          annotations produced by one tool can be readily used by others, creating complex pipelines
+          for automated content analysis. We describe the features provided by the CLAMS software
+          development kit (SDK), present 2 example pipelines of CLAMS applications, and show a
+          visualization tool for exploring data generated using CLAMS.
+        </p>
+
+        <h2>BibTeX</h2>
+        <pre><code>@inproceedings{'{'}lynch2025clams,
+  author    = {'{'}Lynch, Kelley and Rim, Kyeongmin and King, Owen
+               and Pustejovsky, James{'}'},
+  title     = {'{'}Multimodal Interoperability with the {'{'}CLAMS{'}'} Platform{'}'},
+  booktitle = {'{'}MultiMedia Modeling: 31st International Conference,
+               MMM 2025, Nara, Japan{'}'},
+  year      = {'{'}2025{'}'},
+  pages     = {'{'}173--179{'}'},
+  publisher = {'{'}Springer{'}'},
+  doi       = {'{'}10.1007/978-981-96-2074-6_19{'}'}
+{'}'}</code></pre>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  h1 {
+    margin-bottom: var(--space-sm);
+    font-size: 2rem;
+  }
+
+  .paper-meta {
+    margin-bottom: var(--space-lg);
+  }
+
+  .authors {
+    font-size: 1rem;
+    margin-bottom: var(--space-xs);
+  }
+
+  .venue {
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: var(--color-accent);
+    font-size: 0.95rem;
+  }
+
+  .venue-detail {
+    font-size: 0.88rem;
+    color: var(--color-text-muted);
+  }
+
+  .paper-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-xl);
+    padding-bottom: var(--space-lg);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .paper-body h2 {
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-sm);
+  }
+
+  .paper-body p {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: var(--color-text);
+    margin-bottom: var(--space-md);
+  }
+
+  pre {
+    background: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    padding: var(--space-md);
+    overflow-x: auto;
+    font-size: 0.82rem;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    h1 { font-size: 1.6rem; }
+    .paper-links { flex-direction: column; }
+  }
+</style>

@@ -1,0 +1,119 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Video Content Summarization with Large Language-Vision Models — Kelley Lynch" description="A modular pipeline for summarizing broadcast news videos using large language and vision models. Published at IEEE Big Data 2024.">
+  <section>
+    <div class="container">
+      <p class="section-label"><a href="/publications">&larr; Publications</a></p>
+      <h1>Video Content Summarization with Large Language-Vision Models</h1>
+
+      <div class="paper-meta">
+        <p class="authors"><strong>Kelley Lynch</strong>, Bowen Jiang, Benjamin Lambright, Kyeongmin Rim, James Pustejovsky</p>
+        <p class="venue">2024 IEEE International Conference on Big Data (BigData), Washington, DC</p>
+        <p class="venue-detail">CAS Workshop &middot; Pages 2456&ndash;2463</p>
+      </div>
+
+      <div class="paper-links">
+        <a href="https://ai-collaboratory.net/wp-content/uploads/2024/11/S01215_8341.pdf" target="_blank" class="btn btn-primary">PDF</a>
+        <a href="https://doi.org/10.1109/BigData62323.2024.10825195" target="_blank" class="btn btn-outline">Publisher (IEEE)</a>
+        <a href="/projects/video-summarization" class="btn btn-outline">Project Page</a>
+      </div>
+
+      <div class="paper-body">
+        <h2>Abstract</h2>
+        <p>
+          We present a modular pipeline for summarizing broadcast news videos using large language
+          and vision models, specifically integrating Whisper for ASR, TransNetV2 for shot
+          segmentation, LLaVA for image captioning, and LLaMA for generating structured summaries.
+          Implemented within the CLAMS platform using the Multimedia Interchange Format (MMIF) for
+          component interoperability, our approach combines ASR transcriptions and image captions to
+          enhance metadata extraction. We evaluated our pipeline with automated metrics based on
+          user-generated Youtube video descriptions as well as human assessments. Our analysis
+          highlights challenges with automated metrics and emphasizes the value of human evaluation
+          for nuanced assessment. This work demonstrates the effectiveness of multimodal
+          summarization for video metadata extraction and paves the way for enhanced video
+          accessibility.
+        </p>
+
+        <h2>BibTeX</h2>
+        <pre><code>@inproceedings{'{'}lynch2024videosumm,
+  author    = {'{'}Lynch, Kelley and Jiang, Bowen and Lambright, Benjamin
+               and Rim, Kyeongmin and Pustejovsky, James{'}'},
+  title     = {'{'}Video Content Summarization with Large
+               Language-Vision Models{'}'},
+  booktitle = {'{'}2024 IEEE International Conference on Big Data
+               (BigData){'}'},
+  year      = {'{'}2024{'}'},
+  pages     = {'{'}2456--2463{'}'},
+  address   = {'{'}Washington, DC, USA{'}'},
+  doi       = {'{'}10.1109/BigData62323.2024.10825195{'}'}
+{'}'}</code></pre>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  h1 {
+    margin-bottom: var(--space-sm);
+    font-size: 2rem;
+  }
+
+  .paper-meta {
+    margin-bottom: var(--space-lg);
+  }
+
+  .authors {
+    font-size: 1rem;
+    margin-bottom: var(--space-xs);
+  }
+
+  .venue {
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: var(--color-accent);
+    font-size: 0.95rem;
+  }
+
+  .venue-detail {
+    font-size: 0.88rem;
+    color: var(--color-text-muted);
+  }
+
+  .paper-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-xl);
+    padding-bottom: var(--space-lg);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .paper-body h2 {
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-sm);
+  }
+
+  .paper-body p {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: var(--color-text);
+    margin-bottom: var(--space-md);
+  }
+
+  pre {
+    background: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    padding: var(--space-md);
+    overflow-x: auto;
+    font-size: 0.82rem;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    h1 { font-size: 1.6rem; }
+    .paper-links { flex-direction: column; }
+  }
+</style>
