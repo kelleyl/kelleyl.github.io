@@ -58,6 +58,36 @@ const cvFilename = `Lynch_Kelley_CV_${buildDate}.pdf`;
     </div>
   </section>
 
+  <!-- Awards & Honors -->
+  <section>
+    <div class="container">
+      <h2>Awards & Honors</h2>
+      <div class="awards-list">
+        <div class="award-entry">
+          <span class="award-year">2019</span>
+          <div>
+            <strong>Best Demo</strong>
+            <span class="award-detail">AMIA Hack Day</span>
+          </div>
+        </div>
+        <div class="award-entry">
+          <span class="award-year">2018</span>
+          <div>
+            <strong>David L. Waltz Summer Research Fellowship</strong>
+            <span class="award-detail">Brandeis University</span>
+          </div>
+        </div>
+        <div class="award-entry">
+          <span class="award-year">2017</span>
+          <div>
+            <strong>Best Teaching Assistant</strong>
+            <span class="award-detail">Brandeis University</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Contact -->
   <section>
     <div class="container">
@@ -127,6 +157,43 @@ const cvFilename = `Lynch_Kelley_CV_${buildDate}.pdf`;
     font-size: 0.92rem;
     margin-top: var(--space-sm);
     line-height: 1.65;
+  }
+
+  .awards-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .award-entry {
+    display: flex;
+    gap: var(--space-lg);
+    padding: var(--space-md) 0;
+    border-bottom: 1px solid var(--color-border);
+    align-items: baseline;
+  }
+
+  .award-entry:last-child {
+    border-bottom: none;
+  }
+
+  .award-year {
+    flex-shrink: 0;
+    width: 50px;
+    font-family: var(--font-serif);
+    font-weight: 600;
+    color: var(--color-accent);
+    font-size: 0.9rem;
+  }
+
+  .award-detail {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    margin-left: var(--space-sm);
+  }
+
+  .award-detail::before {
+    content: "—";
+    margin-right: var(--space-xs);
   }
 
   @media (max-width: 768px) {
